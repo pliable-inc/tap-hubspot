@@ -183,6 +183,7 @@ def get_field_type_schema(field_type):
         return {"type": ["null", "string"]}
 
 def get_field_schema(field_type, extras=False):
+
     if extras:
         return {
             "type": "object",
@@ -214,7 +215,7 @@ def parse_custom_schema(entity_name, data, is_custom_object=False):
         }
     
     for field in data:
-        LOGGER.info(f"field {field['name']}")
+        LOGGER.info(f"field {field['name']} {field['type']}")
 
 
     return {
