@@ -195,6 +195,7 @@ def get_field_schema(field_type, extras=False):
             }
         }
     else:
+        return get_field_type_schema(field_type)
         return {
             "type": "object",
             "properties": {
@@ -216,8 +217,6 @@ def parse_custom_schema(entity_name, data, is_custom_object=False):
     
     for field in data:
         LOGGER.info(f"field {field['name']} {field['type']}")
-        # LOGGER.info(json.dumps(field))
-
 
     return {
         field['name']: get_field_schema(field['type'], entity_name != 'contacts')
