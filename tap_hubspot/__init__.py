@@ -219,7 +219,7 @@ def parse_custom_schema(entity_name, data, is_custom_object=False):
         LOGGER.info(f"field {field['name']} {field['type']}")
 
     return {
-        field['name']: get_field_schema(field['type'], entity_name != 'contacts')
+        field['name']: get_field_schema(field['type'])
         for field in data if not field['name'].startswith("hs_")
     }
 
