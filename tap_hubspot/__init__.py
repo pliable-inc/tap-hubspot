@@ -216,7 +216,7 @@ def parse_custom_schema(entity_name, data, is_custom_object=False):
     
     for field in data:
         LOGGER.info(f"field {field['name']} {field['type']}")
-        LOGGER.info(json.dumps(field))
+        # LOGGER.info(json.dumps(field))
 
 
     return {
