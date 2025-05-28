@@ -212,6 +212,9 @@ def parse_custom_schema(entity_name, data, is_custom_object=False):
             field['name']: get_field_type_schema(field['type'])
             for field in data["results"]
         }
+    
+    for field in data:
+        LOGGER.info(f"field {field['name']}")
 
 
     return {
