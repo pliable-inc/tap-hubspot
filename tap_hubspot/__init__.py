@@ -213,9 +213,10 @@ def parse_custom_schema(entity_name, data, is_custom_object=False):
             for field in data["results"]
         }
 
+
     return {
         field['name']: get_field_schema(field['type'], entity_name != 'contacts')
-        for field in data
+        for field in data if not field['name'].startswith("hs_")
     }
 
 
