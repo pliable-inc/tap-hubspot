@@ -387,6 +387,9 @@ def lift_properties_and_versions(record):
         computed_key = "property_{}".format(key)
         record[computed_key] = value
         if isinstance(value, dict):
+            if 'value' in value:
+                record[computed_key] = value['value']
+
             versions = value.get('versions')
             if versions:
                 if not record.get('properties_versions'):
