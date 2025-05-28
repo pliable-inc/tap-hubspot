@@ -271,7 +271,9 @@ def load_schema(entity_name):
 
     if entity_name == "contacts":
         schema['properties']['associated-company'] = load_associated_company_schema()
-
+    
+    LOGGER.info("yoyoy")
+    LOGGER.info(schema)
     return schema
 
 #pylint: disable=invalid-name
